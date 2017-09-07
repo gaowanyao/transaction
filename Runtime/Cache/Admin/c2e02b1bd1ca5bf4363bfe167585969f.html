@@ -188,7 +188,7 @@
                                             <!-- height:0;width:0;z-index: -1;是为了隐藏input，因为Chrome下不能使用display:none，否则无法添加文件 -->
                                             <!-- onclick="getElementById('inputfile').click()" 点击图片时则点击添加文件按钮 -->
                                             <?php if(!empty($data["img"])): ?><!--没有图片显示默认图片-->
-                                                <img id="up_img" onclick="getElementById('inputfile').click()" style="cursor:pointer;max-width:500px;" title="点击添加图片" alt="点击添加图片" src="/Upload/coin/<?php echo ($data["img"]); ?>">
+                                                <img id="up_img" onclick="getElementById('inputfile').click()" style="cursor:pointer;max-width:500px;" title="点击添加图片" alt="点击添加图片" src="/upload/coin/<?php echo ($data["img"]); ?>">
                                                 <?php else: ?>
                                                 <!--没有图片显示默认图片-->
                                                 <img id="up_img" onclick="getElementById('inputfile').click()" style="cursor:pointer;max-width:500px;" title="点击添加图片" alt="点击添加图片" src="/Public/Admin/images/addimg.png"><?php endif; ?>
@@ -533,7 +533,7 @@
                 processData: false,		//不可缺参数
                 success: function (data) {
                     if (data) {
-                        $('#up_img').attr("src", '/Upload/coin/' + data);
+                        $('#up_img').attr("src", '/upload/coin/' + data);
                         $('#img').val(data);
                         $('#up_img').show();
                     }

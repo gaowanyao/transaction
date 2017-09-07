@@ -185,7 +185,7 @@
 							<td><?php echo ($vo["id"]); ?></td>
 							<td><?php echo ($vo["name"]); ?></td>
 							<td><?php echo ($vo["title"]); ?></td>
-							<td><img src="/Upload/coin/<?php echo ($vo["img"]); ?>" height="18px"/></td>
+							<td><img src="/upload/coin/<?php echo ($vo['img']); ?>" height="18px"/></td>
 							<td>
 								<?php if(($vo["type"]) == "qbb"): ?><a href="<?php echo U('Config/coinInfo?coin='.$vo['name']);?>">钱包信息</a>
 									<a href="<?php echo U('Config/coinUser?coin='.$vo['name']);?>">所有账号</a>

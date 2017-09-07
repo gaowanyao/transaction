@@ -278,12 +278,23 @@ class ConfigController extends AdminController
 		$dj_port = C('coin')[$coin]['dj_dk'];
 		$CoinClient = CoinClient($dj_username, $dj_password, $dj_address, $dj_port);
 
+
+//        dump($CoinClient);
+
 		if (!$CoinClient) {
 			$this->error('钱包对接失败！');
 		}
+//
 
-		$info['b'] = $CoinClient->getinfo();
-		$info['num'] = M('UserCoin')->sum($coin) + M('UserCoin')->sum($coin . 'd');
+//        dump(C('coin'));
+//        dump(12);
+
+
+        $info['b'] = $CoinClient->getinfo();
+
+
+
+        $info['num'] = M('UserCoin')->sum($coin) + M('UserCoin')->sum($coin . 'd');
 		$info['coin'] = $coin;
 		$this->assign('data', $info);
 		$this->display();
@@ -297,23 +308,38 @@ class ConfigController extends AdminController
 		$dj_port = C('coin')[$coin]['dj_dk'];
 		$CoinClient = CoinClient($dj_username, $dj_password, $dj_address, $dj_port);
 
+
+
 		if (!$CoinClient) {
 			$this->error('钱包对接失败！');
 		}
 
 		$arr = $CoinClient->listaccounts();
 
-		foreach ($arr as $k => $v) {
+
+
+        foreach ($arr as $k => $v) {
+
 			if ($k) {
 				if ($v < 1.0000000000000001E-5) {
 					$v = 0;
 				}
 
 				$list[$k]['num'] = $v;
-				$str = '';
-				$addr = $CoinClient->getaddressesbyaccount($k);
 
-				foreach ($addr as $kk => $vv) {
+
+
+//                dump($CoinClient->getinfo());
+
+
+                $str = '';
+				$addr = $CoinClient->getaddressesbyaccount("$k");
+
+//                $addr =1;
+//                dump($addr);
+
+
+                foreach ($addr as $kk => $vv) {
 					$str .= $vv . '<br>';
 				}
 
@@ -328,7 +354,9 @@ class ConfigController extends AdminController
 			}
 		}
 
-		$this->assign('list', $list);
+
+
+        $this->assign('list', $list);
 		$this->display();
 	}
 
@@ -353,7 +381,7 @@ class ConfigController extends AdminController
 		$upload = new \Think\Upload();
 		$upload->maxSize = 3145728;
 		$upload->exts = array('jpg', 'gif', 'png', 'jpeg');
-		$upload->rootPath = './Upload/coin/';
+		$upload->rootPath = './upload/coin/';
 		$upload->autoSub = false;
 		$info = $upload->upload();
 

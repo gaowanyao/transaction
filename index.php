@@ -38,7 +38,7 @@
 	define('M_ONLY',1);
 	
     // 定义手机端网址
-    define('WAP_URL', 'transaction.gcan.top');
+    define('WAP_URL', 'http://m.gcan.top');
 	
     // 后台安全入口
     define('ADMIN_KEY', 'qq3479015851');

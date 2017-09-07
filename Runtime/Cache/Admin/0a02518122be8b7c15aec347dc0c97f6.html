@@ -129,7 +129,7 @@
 			</div>
 			<div class="search-form fr cf">
 				<div class="sleft">
-					<form action="<?php echo ((isset($searchPostUrl) && ($searchPostUrl !== ""))?($searchPostUrl):'/Admin/Vote/type.html'); ?>" name="formSearch" id="formSearch" method="get" name="form1">
+					<form action="<?php echo ((isset($searchPostUrl) && ($searchPostUrl !== ""))?($searchPostUrl):'/Admin/Shop/index.html'); ?>" name="formSearch" id="formSearch" method="get" name="form1">
 						<?php if(is_array($searches)): $i = 0; $__LIST__ = $searches;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$search): $mod = ($i % 2 );++$i; if($search['type'] == 'select'): ?><select size="1" name="<?php echo ($search['name']); ?>" class="search-input form-control form-input-width" style="height: 32px; font-size: 14px; width: 110px; float: left; margin-right: 5px;" name="field">
 									<?php if(is_array($search['attr'])): $i = 0; $__LIST__ = $search['attr'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$svo): $mod = ($i % 2 );++$i; $search_name=isset($_GET[$search['name']])?$_GET[$search['name']]:'' ?>
 										<option value="<?php echo ($key); ?>"

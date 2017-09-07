@@ -87,7 +87,7 @@
                                             <!-- onclick="getElementById('inputfile').click()" 点击图片时则点击添加文件按钮 -->
                                             <notempty name="data.img">
                                                 <!--没有图片显示默认图片-->
-                                                <img id="up_img" onclick="getElementById('inputfile').click()" style="cursor:pointer;max-width:500px;" title="点击添加图片" alt="点击添加图片" src="/Upload/coin/{$data.img}">
+                                                <img id="up_img" onclick="getElementById('inputfile').click()" style="cursor:pointer;max-width:500px;" title="点击添加图片" alt="点击添加图片" src="/upload/coin/{$data.img}">
                                                 <else/>
                                                 <!--没有图片显示默认图片-->
                                                 <img id="up_img" onclick="getElementById('inputfile').click()" style="cursor:pointer;max-width:500px;" title="点击添加图片" alt="点击添加图片" src="__PUBLIC__/Admin/images/addimg.png">
@@ -455,7 +455,7 @@
                 processData: false,		//不可缺参数
                 success: function (data) {
                     if (data) {
-                        $('#up_img').attr("src", '/Upload/coin/' + data);
+                        $('#up_img').attr("src", '/upload/coin/' + data);
                         $('#img').val(data);
                         $('#up_img').show();
                     }

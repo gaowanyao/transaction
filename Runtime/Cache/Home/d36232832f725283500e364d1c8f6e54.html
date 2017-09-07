@@ -151,7 +151,7 @@
         if (data) {
             var list = '';
             for (var i in data) {
-                list += '<dd><a href="/Trade/index/market/' + data[i]['name'] + '"><img src="/Upload/coin/' + data[i]['img'] + '" style="width: 18px; margin-right: 5px;">' + data[i]['title'] + '</a></dd>';
+                list += '<dd><a href="/Trade/index/market/' + data[i]['name'] + '"><img src="/upload/coin/' + data[i]['img'] + '" style="width: 18px; margin-right: 5px;">' + data[i]['title'] + '</a></dd>';
             }
             $("#menu_list_json").html(list);
         }
@@ -313,7 +313,7 @@
 					今日涨停价格：<span class="red" id="zhangting"></span>, 
 					今日跌停价格：<span class="red" id="dieting"></span>
 					
-					&nbsp;&nbsp;&nbsp;&nbsp 交易时间：<?php echo ($market_time); ?>
+					<!--&nbsp;&nbsp;&nbsp;&nbsp 交易时间：<?php echo ($market_time); ?>-->
 				</span>
 			</div>
 			<div id="coins_timer" style="float: right; font-size: 14px; text-align: right; color: #f60;" ></div>

@@ -13,8 +13,8 @@ class IndexController extends HomeController
 		}
 
 		$this->assign('indexAdver', $indexAdver);
-		
-		
+
+
 		switch(C('index_html')){
 			case "a":
 				//如果a模版
@@ -47,6 +47,7 @@ class IndexController extends HomeController
 				
 			default:
 				$indexArticleType = (APP_DEBUG ? null : S('index_indexArticleType'));
+
 
 				if (!$indexArticleType) {
 					$indexArticleType = M('ArticleType')->where(array('status' => 1, 'index' => 1))->order('sort asc ,id desc')->limit(3)->select();

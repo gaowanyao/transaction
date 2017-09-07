@@ -13,7 +13,9 @@ class ShopController extends HomeController
 
 
 		$this->assign('prompt_text', D('Text')->get_content('game_shop'));
-		
+
+
+
 		
 		if ($name) {
 			$where['name'] = array('like', '%' . trim($name) . '%');

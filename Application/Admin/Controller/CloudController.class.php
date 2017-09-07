@@ -235,9 +235,12 @@ class CloudController extends AdminController
 
         $DbFields = M('Config')->getDbFields();
 
+
         if (!in_array('index_html', $DbFields)) {
             M()->execute('ALTER TABLE `movesay_config` ADD COLUMN `index_html` VARCHAR(200)  NOT NULL   COMMENT \'\' AFTER `id`;');
         }
+
+
 
         $this->assign('fileArr', $fileArr);
         $this->assign('mianfei', $mianfei);

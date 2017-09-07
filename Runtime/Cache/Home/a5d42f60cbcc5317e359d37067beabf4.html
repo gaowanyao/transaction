@@ -439,7 +439,7 @@ li.active > a{
 									<p id="qrcode-t" style="font-size:13px;text-align: center;"><?php echo ($coin_list[$xnb]['title']); ?>钱包地址</p>
 								</div>
 								<div class="qb_tishi">
-									这是您的钱包地址，请将您的 <b class="coin-name"><?php echo ($coin_list[$xnb]['title']); ?></b>转入此地址： 
+									这是您的钱包地址，请将您的 <b class="coin-name"><?php echo ($coin_list[$xnb]['title']); ?></b> 转入此地址：
 									<?php if(!empty($coin_list[$xnb]['zr_zs'])): ?><span id="zengsong" style="color: red; font-size: 14px;">转入即赠<?php echo ($coin_list[$xnb]['zr_zs']); ?>%</span><?php endif; ?>
 								</div>
 								<div class="qb_dizhi ts mb20">
@@ -767,7 +767,7 @@ li.active > a{
 <div class="clear">
 </div>
 <div class="boxs mt40">
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer"  >
         <section class="main">
             <div class="about_me">
                 <div class="wx">
@@ -949,7 +949,7 @@ li.active > a{
             <input type="text" id="login_moble" class="texts hg40 w250" placeholder="请输入手机号码"
                    style="padding-left: 42px;" value=""/>
             <link rel="stylesheet" href="/comfile/css/intltelinput.css">
-            <script src="/comfile/js/intltelinput.js"></script>
+            <script src="/comfile/js/intlTelInput.js"></script>
             <script>
                 $("#login_mobles").intlTelInput({
                     autoHideDialCode: false,

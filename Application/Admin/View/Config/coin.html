@@ -78,7 +78,7 @@
 							<td>{$vo.id}</td>
 							<td>{$vo.name}</td>
 							<td>{$vo.title}</td>
-							<td><img src="__UPLOAD__/coin/{$vo.img}" height="18px"/></td>
+							<td><img src="__UPLOAD__/coin/{$vo['img']}" height="18px"/></td>
 							<td>
 								<eq name="vo.type" value="qbb">
 									<a href="{:U('Config/coinInfo?coin='.$vo['name'])}">钱包信息</a>

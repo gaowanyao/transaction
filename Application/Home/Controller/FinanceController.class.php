@@ -13,6 +13,8 @@ class FinanceController extends HomeController
 		$UserCoin = M('UserCoin')->where(array('userid' => userid()))->find();
 		$Market = M('Market')->where(array('status' => 1))->select();
 
+//		dump($Market);
+
 		foreach ($Market as $k => $v) {
 			$Market[$v['name']] = $v;
 		}
@@ -708,7 +710,9 @@ class FinanceController extends HomeController
 
 		$this->assign('coin_list', $coin_list);
 		$user_coin = M('UserCoin')->where(array('userid' => userid()))->find();
-		$user_coin[$coin] = round($user_coin[$coin], 6);
+
+
+        $user_coin[$coin] = round($user_coin[$coin], 6);
 		$this->assign('user_coin', $user_coin);
 		$Coin = M('Coin')->where(array('name' => $coin))->find();
 		$this->assign('zr_jz', $Coin['zr_jz']);
@@ -720,7 +724,10 @@ class FinanceController extends HomeController
 		}
 
 		$this->assign("qq3479015851_opencoin",$qq3479015851_getCoreConfig['qq3479015851_opencoin']);
-		
+
+
+
+
 		if($qq3479015851_getCoreConfig['qq3479015851_opencoin'] == 1)
 		{		
 		
@@ -730,7 +737,9 @@ class FinanceController extends HomeController
 				else {
 					$qbdz = $coin . 'b';
 
-					if (!$user_coin[$qbdz]) {
+
+
+                    if (!$user_coin[$qbdz]) {
 						if ($Coin['type'] == 'rgb') {
 							$qianbao = md5(username() . $coin);
 							$rs = M('UserCoin')->where(array('userid' => userid()))->save(array($qbdz => $qianbao));
@@ -747,6 +756,9 @@ class FinanceController extends HomeController
 							$dj_port = $Coin['dj_dk'];
 							$CoinClient = CoinClient($dj_username, $dj_password, $dj_address, $dj_port, 5, array(), 1);
 							$json = $CoinClient->getinfo();
+
+
+
 
 							if (!isset($json['version']) || !$json['version']) {
 								$this->error('钱包链接失败！');

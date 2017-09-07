@@ -69,12 +69,15 @@ class CoinClient
 		preg_match('/[\\d]{3}/i', $header_1, $code);
 		$code = trim($code[0]);
 
+
 		if ($code == '200') {
 			return isset($response['result']) ? $response['result'] : 'nodata';
 		}
 		else if ($response['error'] && is_array($response['error'])) {
 			$detail = 'code=' . $response['error']['code'] . ',message=' . $response['error']['message'];
-			$this->error('SERVER 返回' . $code . '[' . $detail . ']');
+
+
+            $this->error('SERVER 返回' . $code . '[' . $detail . ']');
 		}
 		else {
 			$this->error('SERVER 返回' . $code);
@@ -106,6 +109,7 @@ class CoinClient
 
 	protected function error($str)
 	{
+
 		if ($this->jsonformat) {
 			$this->res = json_encode(array('data' => $str, 'status' => 0));
 		}

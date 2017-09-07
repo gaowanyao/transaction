@@ -38,7 +38,7 @@ class TradeController extends HomeController
 				if($v['name']==$market){
 					$dq_title=$v['title'];
 					}
-				$dataall[$k][9] = '/Upload/coin/'.$v['xnbimg'];
+				$dataall[$k][9] = '/upload/coin/'.$v['xnbimg'];
 				$dataall[$k][10] = '';
 				$k++;
 			}
@@ -328,7 +328,7 @@ class TradeController extends HomeController
 			}
 
 			if ($user_coin[$xnb] < $num) {
-				$this->error(C('coin')[$xnb]['title'] . '余额不足2！');
+				$this->error(C('coin')[$xnb]['title'] . '余额不足！');
 			}
 		}
 		else {
@@ -479,7 +479,7 @@ class TradeController extends HomeController
 		}
 		else if ($type == 2) {
 			if ($user_coin[$xnb] < $num) {
-				$this->error(C('coin')[$xnb]['title'] . '余额不足2！');
+				$this->error(C('coin')[$xnb]['title'] . '余额不足！');
 			}
 
 			$rs[] = $mo->table('qq3479015851_user_coin')->where(array('userid' => userid()))->setDec($xnb, $num);
